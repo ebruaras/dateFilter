@@ -1,0 +1,20 @@
+﻿@model IEnumerable<dbfirst.Table1>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+<div>
+    <p>All User List</p>
+</div>
+
+<div>
+    @foreach (var people in Model)
+    {
+        @people.Name
+        <br />
+    }
+</div>
