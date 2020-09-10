@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LN/NKIB+KBd3a3OJdnMhpsrVn9zwPoVvThXP8RnDWTI61/VkViTGnJucadMruJWPisjJx2RVKf8NBq7stVttgA==",
+  "dgSpecHash": "Aawj72zdOtdjkYgQWvXV2eEFJT/FSUgz916ZsGxXMg+BWh3c/04nUq7+3Jb1S8AfptDMBLjoAYEAR7HRyz3KEg==",
   "success": true,
   "projectFilePath": "C:\\Users\\EBRU\\source\\repos\\dateFilter\\dbfirst\\dbfirst.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\EBRU\\.nuget\\packages\\devart.data\\5.0.2488\\devart.data.5.0.2488.nupkg.sha512",
     "C:\\Users\\EBRU\\.nuget\\packages\\devart.data.postgresql\\7.17.1696\\devart.data.postgresql.7.17.1696.nupkg.sha512",
     "C:\\Users\\EBRU\\.nuget\\packages\\devart.data.postgresql.efcore\\7.17.1696\\devart.data.postgresql.efcore.7.17.1696.nupkg.sha512",
+    "C:\\Users\\EBRU\\.nuget\\packages\\jquery\\3.5.1\\jquery.3.5.1.nupkg.sha512",
     "C:\\Users\\EBRU\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\EBRU\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\EBRU\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",

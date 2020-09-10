@@ -32,11 +32,14 @@ namespace dbfirst.Controllers
 
        
        
-        public IActionResult GetInfo(DateTime start, DateTime end)
+        public IActionResult GetInfo(string start, string end)
         {
             using (var context = new dbfirstContext())
             {
-                var data = context.Table1.Where(p => p.Date >= start && p.Date < end).ToList();
+                DateTime startdate = Convert.ToDateTime(start);
+                DateTime enddate = Convert.ToDateTime(end);
+
+                var data = context.Table1.Where(p => p.Date >= startdate && p.Date < enddate).ToList();
                 //data.ToList();
                 return View(data);
             }
