@@ -20,22 +20,29 @@
         var date2 = $('.start').datepicker('getDate');
         date2.setDate(date2.getDate() + 1);
 
-
+        var today = new Date();
+        var datetoday = today.getDate();
+        today.setDate(datetoday);
 
         var date3 = $('.start').datepicker('getDate');
         date3.setDate(date3.getDate() + 5);
-
-
-
+        
         $('.end').datepicker('setDate', date2);
         $(".end").datepicker("option", "minDate", date2);
-        $(".end").datepicker("option", "maxDate", date3);
+      //  $(".end").datepicker("option", "maxDate", date3);
+
+        if (date3 > today) {
+            $(".end").datepicker("option", "maxDate", today);
+        }
+        else {
+            $(".end").datepicker("option", "maxDate", date3);
+        }
 
     }
     $(document).ready(function () {
         $(".start").datepicker({
             dateFormat: "dd-M-yy",
-
+            
 
 
             onSelect: function (date) {
@@ -50,7 +57,10 @@
                 if (dt2 > dt1) {
                     var minDate = $('end').datepicker('option', 'minDate');
                     $('.end').datepicker('setDate', minDate);
+
+                    
                 }
+               
             }
         }).datepicker("setDate", new Date());
     });
