@@ -9,8 +9,8 @@
 @using (Html.BeginForm("GetInfo", "Home", FormMethod.Post))
 {
 
-    <input type="text" class="start" id="start" placeholder="Start Date" />
-    <input type="text" class="end" id="end" placeholder="End Date" />
+    <input type="text" class="start" id="start" name="start" placeholder="Start Date" />
+    <input type="text" class="end" id="end" name="end" placeholder="End Date" />
     <input type="submit" value="Search" />
 
 }
@@ -19,22 +19,31 @@
     function populateEndDate() {
         var date2 = $('.start').datepicker('getDate');
         date2.setDate(date2.getDate() + 1);
+
+
+
+        var date3 = $('.start').datepicker('getDate');
+        date3.setDate(date3.getDate() + 5);
+
+
+
         $('.end').datepicker('setDate', date2);
         $(".end").datepicker("option", "minDate", date2);
+        $(".end").datepicker("option", "maxDate", date3);
+
     }
-
     $(document).ready(function () {
-
         $(".start").datepicker({
             dateFormat: "dd-M-yy",
-           
+
+
+
             onSelect: function (date) {
                 populateEndDate();
             }
         }).datepicker("setDate", new Date());
         $('.end').datepicker({
             dateFormat: "dd-M-yy",
-            minDate: 1,
             onClose: function () {
                 var dt1 = $('.start').datepicker('getDate');
                 var dt2 = $('.end').datepicker('getDate');
@@ -50,18 +59,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Department)
-            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Date)
             </th>
@@ -71,18 +69,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Department)
-                </td>
+                
                 <td>
                     @Html.DisplayFor(modelItem => item.Date)
                 </td>
