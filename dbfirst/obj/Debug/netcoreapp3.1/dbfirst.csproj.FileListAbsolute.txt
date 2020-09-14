@@ -280,3 +280,4 @@ C:\Users\EBRU\source\repos\dateFilter\dbfirst\obj\Debug\netcoreapp3.1\dbfirst.pd
 C:\Users\EBRU\source\repos\dateFilter\dbfirst\obj\Debug\netcoreapp3.1\dbfirst.genruntimeconfig.cache
 C:\Users\EBRU\source\repos\dateFilter\dbfirst\obj\Debug\netcoreapp3.1\dbfirst.csproj.CoreCompileInputs.cache
 C:\Users\EBRU\source\repos\dateFilter\dbfirst\obj\Debug\netcoreapp3.1\dbfirst.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\EBRU\source\repos\dateFilter\dbfirst\obj\Debug\netcoreapp3.1\Razor\Views\Home\GetInfoUsingId.cshtml.g.cs

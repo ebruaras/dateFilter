@@ -43,6 +43,16 @@ namespace dbfirst.Controllers
 
         }
 
+        public IActionResult GetInfoUsingId(DateTime? start, DateTime? end)
+        {
+            using (var context = new dbfirstContext())
+            {
+                var data = context.Table1.Where(p => p.Date >= start && p.Date < end && p.Id == 10).ToList();
+                //data.ToList();
+                return View(data);
+            }
+        }
+
         public IActionResult Privacy()
         {
             return View();
