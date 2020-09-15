@@ -32,13 +32,22 @@ namespace dbfirst.Controllers
 
        
        
-        public IActionResult GetInfo(DateTime? start, DateTime? end)
+        public IActionResult GetInfo(DateTime? start, DateTime? end, int? id)
         {
             using (var context = new dbfirstContext())
             {
-                var data = context.Table1.Where(p => p.Date >= start && p.Date < end).ToList();
-                //data.ToList();
-                return View(data);
+               // var data = context.Table1.Where(p => p.Date >= start && p.Date < end && p.Id==id).ToList();
+                // data.ToList();
+                if (id == null)
+                {
+                    var data2 = context.Table1.Where(p => p.Date >= start && p.Date < end).ToList();
+                    return View(data2);
+                }
+                else
+                {
+                    var data3= context.Table1.Where(p => p.Date >= start && p.Date < end && p.Id==id).ToList();
+                    return View(data3);
+                }
             }
 
         }
