@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using dbfirst.Models;
+using PagedList.Core;
 
 namespace dbfirst.Controllers
 {
@@ -18,21 +19,22 @@ namespace dbfirst.Controllers
             _logger = logger;
         }
 
-      
 
-        public IActionResult Index()
+
+        public IActionResult Index(int page = 1,int pageSize=5)
         {
             using (var context = new dbfirstContext())
             {
                 var people = context.Table1.ToList();
-                return View(people);
+                PagedList<Table1> peopleList = new PagedList<Table1>(context.Table1, page, pageSize);
+                return View(peopleList);
 
             }
         }
 
        
-       
-        public IActionResult GetInfo(DateTime? start, DateTime? end, int? id)
+     
+        public IActionResult GetInfo(DateTime? start, DateTime? end, int? id, int page = 1, int pageSize = 5)
         {
             using (var context = new dbfirstContext())
             {
@@ -40,13 +42,15 @@ namespace dbfirst.Controllers
                 // data.ToList();
                 if (id == null)
                 {
-                    var data2 = context.Table1.Where(p => p.Date >= start && p.Date < end).ToList();
-                    return View(data2);
+                    var data2 = context.Table1.Where(p => p.Date >= start && p.Date < end);
+                    PagedList<Table1> people = new PagedList<Table1>(data2, page, pageSize);
+                    return View(people);
                 }
                 else
                 {
-                    var data3= context.Table1.Where(p => p.Date >= start && p.Date < end && p.Id==id).ToList();
-                    return View(data3);
+                    var data3= context.Table1.Where(p => p.Date >= start && p.Date < end && p.Id==id);
+                    PagedList<Table1> people2 = new PagedList<Table1>(data3, page, pageSize);
+                    return View(people2);
                 }
             }
 

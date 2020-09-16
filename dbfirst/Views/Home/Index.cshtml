@@ -1,4 +1,5 @@
-﻿@model IEnumerable<dbfirst.Table1>
+﻿@model PagedList.Core.IPagedList<dbfirst.Table1>
+@using PagedList.Core;
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -10,11 +11,52 @@
 <div>
     <p>All User List</p>
 </div>
+<body>
 
-<div>
-    @foreach (var people in Model)
-    {
-        @people.Name
-        <br />
-    }
-</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Lastname
+                </th>
+                <th>
+                    Department
+                </th>
+                <th>
+                    Date
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <pager class="pager-container" list="@Model" asp-action="Index" asp-controller="Home" />
+</body>
